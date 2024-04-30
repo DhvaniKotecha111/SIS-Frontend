@@ -1,0 +1,17 @@
+<div class="container text-center mt-5">
+    <h2>Welcome to Student Dashboard</h2>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4 mb-3">
+            <a mat-raised-button color="primary" routerLink="/student-dashboard/view-student-profile">View Profile</a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a mat-raised-button color="primary" routerLink="/student-dashboard" (click)="educationDetails()">Education Details</a>
+        </div>
+        <div class="col-md-4 mb-3">
+            <a mat-raised-button color="primary" routerLink="/student-dashboard" (click)="feeDetails()">Fee Details</a>
+        </div>
+    </div>
+    <div class="mt-4">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+  <h2 style="text-align: center; font-weight: bold;">Your Education Details</h2>
+  <mat-dialog-content>
+    <div class="card">
+      <div class="card-body">
+        <p><strong>Enrollement No:</strong> {{ data.studentEnrollmentNo }}</p>
+        <p><strong>Education Type:</strong> {{ data.educationType }}</p>
+        <p><strong>Percentage:</strong> {{ data.percentage+'%' }}</p>
+        <p><strong>Qualified:</strong> {{ data.qualified }}</p>
+        <p><strong>Updated By:</strong> {{ data.updatedBy }}</p>
+        <p><strong>Updated Date:</strong> {{ data.updatedDate }}</p>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onCloseClick()">Close</button>
+    <button mat-raised-button (click)="onUpdateClick()" color="primary">Update</button>
+  </mat-dialog-actions>
+</div>

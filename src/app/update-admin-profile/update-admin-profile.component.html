@@ -1,0 +1,54 @@
+<div class="bootstrap-wrapper text-center mt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form #adminData="ngForm" (ngSubmit)="updateAdminDetails()">
+                    <mat-form-field class="full-width">
+                        <mat-label>Admin Id</mat-label>
+                        <input required name="adminid" [(ngModel)]="adminDetails.adminid" type="text" readonly matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Name</mat-label>
+                        <input required name="name" [(ngModel)]="adminDetails.name" type="text" readonly matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Address</mat-label>
+                        <input required name="address" [(ngModel)]="adminDetails.address" type="text" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>City</mat-label>
+                        <input required name="city" [(ngModel)]="adminDetails.city" type="text" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Contact</mat-label>
+                        <input required name="contact" [(ngModel)]="adminDetails.contact" type="text" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Gender</mat-label>
+                        <mat-select name="gender" [(ngModel)]="adminDetails.gender">
+                            <mat-option value="Male">Male</mat-option>
+                            <mat-option value="Female">Female</mat-option>
+                            <mat-option value="Other">Other</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>PinCode</mat-label>
+                        <input required name="pinCode" [(ngModel)]="adminDetails.pinCode" type="text" matInput>
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary" [disabled]="adminData.invalid">Update Profile</button>
+                        <button type="reset" mat-stroked-button color="primary"
+                            style="margin-left: 10px;">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

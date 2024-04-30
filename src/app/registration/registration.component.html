@@ -1,0 +1,100 @@
+<div class="bootstrap-wrapper text-center mt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 style="border: 1px dashed black;">Student Register</h1>
+                <form novalidate #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+
+                    <mat-form-field class="full-width">
+                        <mat-label>User Id</mat-label>
+                        <input required #uid="ngModel" name="userid" type="text" matInput ngModel>
+                    </mat-form-field>
+                    <div class="alert alert-danger" *ngIf="uid.touched && uid.invalid">
+                        <div *ngIf="uid.errors && uid.errors['required']">
+                            <strong>User ID is Required</strong>
+                        </div>
+                    </div>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Name</mat-label>
+                        <input required #name="ngModel" name="name" type="text" matInput ngModel
+                            (keyup)="checkNameAvailability(name.value)">
+                    </mat-form-field>
+                    <div class="alert alert-danger" *ngIf="name.errors && name.errors['required'] && name.touched">
+                        <strong>Name is Required</strong>
+                    </div>
+                    <div class="alert alert-danger" *ngIf="!isNameAvailable && name.touched">
+                        <strong>Name is Already Taken</strong>
+                    </div>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>E-Mail</mat-label>
+                        <input required #email="ngModel" name="email" type="text" [pattern]="emailPattern" matInput
+                            ngModel>
+                    </mat-form-field>
+                    <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+                        <div *ngIf="email.errors && email.errors['required']">
+                            <strong>E-Mail is Required</strong>
+                        </div>
+                        <div *ngIf="email.errors && email.errors['pattern']">
+                            <strong>Invalid email Format</strong>
+                        </div>
+                    </div>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Date Of Birth</mat-label>
+                        <input required #dob="ngModel" name="dob" type="date" matInput ngModel>
+                    </mat-form-field>
+                    <div class="alert alert-danger" *ngIf="dob.touched && dob.invalid">
+                        <div *ngIf="dob.errors && dob.errors['required']">
+                            <strong>Date of Birth is Required</strong>
+                        </div>
+                    </div>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input required #pwd="ngModel" name="password" type="password" matInput ngModel
+                            [pattern]="passwordPattern">
+                    </mat-form-field>
+                    <div class="alert alert-danger" *ngIf="pwd.touched && pwd.invalid">
+                        <div *ngIf="pwd.errors && pwd.errors['required']">
+                            <strong>Password is Required</strong>
+                        </div>
+                        <div *ngIf="pwd.errors && pwd.errors['pattern']">
+                            <strong>Password must contain at least 8 characters including one uppercase letter, one
+                                lowercase letter, and one digit</strong>
+                        </div>
+                    </div>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Security Key</mat-label>
+                        <input required #security="ngModel" name="securityKey" type="text" matInput ngModel
+                            [pattern]="securityKeyPattern">
+                    </mat-form-field>
+                    <div class="alert alert-danger" *ngIf="security.touched && security.invalid">
+                        <div *ngIf="security.errors && security.errors['required']">
+                            <strong>Security Key is Required</strong>
+                        </div>
+                        <div *ngIf="security.errors && security.errors['pattern']">
+                            <strong>Security Key must be exactly 6 characters long and contain only alphanumeric
+                                characters</strong>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <button type="submit" mat-raised-button color="primary"
+                            [disabled]="formData.invalid">Register</button>
+                        <button type="reset" mat-stroked-button color="primary"
+                            style="margin-left: 10px;">Reset</button>
+                    </div>
+                </form>
+                <br>
+                <!-- Login Link -->
+                <p>Already Registered ? <a routerLink="/student-login">Login here</a>.</p>
+
+                <!-- Display response message -->
+                <div *ngIf="message" class="alert alert-info">{{ message }}</div>
+            </div>
+        </div>
+    </div>
+</div>

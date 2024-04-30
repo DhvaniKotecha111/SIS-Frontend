@@ -1,0 +1,94 @@
+<div class="bootstrap-wrapper text-center mt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form novalidate [formGroup]="student" (ngSubmit)="saveStudent()">
+                    <mat-form-field class="full-width">
+                        <mat-label>Enrollent No</mat-label>
+                        <input formControlName="enrollmentNo" type="text" readonly matInput>
+                        <mat-error *ngIf="formCtrl.enrollmentNo.invalid && formCtrl.enrollmentNo.touched">
+                            <span *ngIf="formCtrl.enrollmentNo.errors.required">Enrollent No is required</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>User Name</mat-label>
+                        <input formControlName="name" type="text" readonly matInput>
+                        <mat-error *ngIf="formCtrl.name.invalid && formCtrl.name.touched">
+                            <span *ngIf="formCtrl.name.errors.required">Name is required</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Address</mat-label>
+                        <input formControlName="address" type="text" matInput>
+                        <mat-error *ngIf="formCtrl.address.invalid && formCtrl.address.touched">
+                            <span *ngIf="formCtrl.address.errors.required">Address is required</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Branch</mat-label>
+                        <input formControlName="branch" type="text" matInput>
+                        <mat-error *ngIf="formCtrl.branch.invalid && formCtrl.branch.touched">
+                            <span *ngIf="formCtrl.branch.errors.required">Branch is required</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>City</mat-label>
+                        <input formControlName="city" type="text" matInput>
+                        <mat-error *ngIf="formCtrl.city.invalid && formCtrl.city.touched">
+                            <span *ngIf="formCtrl.city.errors.required">City is required</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Contact</mat-label>
+                        <input formControlName="contact" type="text" matInput>
+                        <mat-error *ngIf="formCtrl.contact.invalid && formCtrl.contact.touched">
+                            <span *ngIf="formCtrl.contact.errors.required">Contact is required</span>
+                            <span *ngIf="formCtrl.contact.errors.pattern">It should be of 10 digits only</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Date Of Birth</mat-label>
+                        <input formControlName="dob" type="date" matInput>
+                        <mat-error *ngIf="formCtrl.dob.invalid && formCtrl.dob.touched">
+                            <span *ngIf="formCtrl.dob.errors.required">Date of Birth is required</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender">
+                            <mat-option value="Male">Male</mat-option>
+                            <mat-option value="Female">Female</mat-option>
+                            <mat-option value="Other">Other</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="formCtrl.gender.invalid && formCtrl.gender.touched">
+                            <span *ngIf="formCtrl.gender.errors.required">Gender is required</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Pincode</mat-label>
+                        <input formControlName="pinCode" type="text" matInput>
+                        <mat-error *ngIf="formCtrl.pinCode.invalid && formCtrl.pinCode.touched">
+                            <span *ngIf="formCtrl.pinCode.errors.required">PinCode is required</span>
+                            <span *ngIf="formCtrl.pinCode.errors.pattern">It should be of 6 digits only</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary" [disabled]="student.invalid">Create
+                            Profile</button>
+                        <button type="reset" mat-stroked-button color="primary"
+                            style="margin-left: 10px;">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

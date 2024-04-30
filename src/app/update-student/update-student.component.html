@@ -1,0 +1,61 @@
+<div class="bootstrap-wrapper text-center mt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Enrollent No</mat-label>
+                        <input type="text" name="enrollmentNo" [(ngModel)]="updatedStudent.enrollmentNo" matInput disabled>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>User Name</mat-label>
+                        <input type="text" name="name" [(ngModel)]="updatedStudent.name" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Address</mat-label>
+                        <input type="text" name="address" [(ngModel)]="updatedStudent.address" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Branch</mat-label>
+                        <input type="text" name="branch" [(ngModel)]="updatedStudent.branch" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>City</mat-label>
+                        <input type="text" name="city" [(ngModel)]="updatedStudent.city" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Contact</mat-label>
+                        <input type="text" name="contact" [(ngModel)]="updatedStudent.contact" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Date Of Birth</mat-label>
+                        <input type="text" name="dob" [(ngModel)]="updatedStudent.dob" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Gender</mat-label>
+                        <input type="text" name="gender" [(ngModel)]="updatedStudent.gender" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Pincode</mat-label>
+                        <input type="text" name="pinCode" [(ngModel)]="updatedStudent.pinCode" matInput>
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary" (click)="onUpdateClick()">Update</button>
+                        <button mat-stroked-button color="primary" (click)="onCloseClick()"
+                            style="margin-left: 10px;">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

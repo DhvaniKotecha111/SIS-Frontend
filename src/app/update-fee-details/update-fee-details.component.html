@@ -1,0 +1,29 @@
+<h2 mat-dialog-title style="text-align: center; font-weight: bold;">Update Fee Details</h2>
+<form>
+    <mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Student Enrollment No</mat-label>
+            <input required matInput type="text" name="studentEnrollmentNo" [(ngModel)]="data.feeDetails.studentEnrollmentNo" readonly>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Fee Amount</mat-label>
+            <input required matInput type="text" name="feeAmount" [(ngModel)]="data.feeDetails.feeAmount">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Due Date</mat-label>
+            <input required matInput type="date" name="dueDate" [(ngModel)]="data.feeDetails.dueDate">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Updated By</mat-label>
+            <input required matInput type="text" name="updatedBy" [(ngModel)]="data.feeDetails.updatedBy" readonly>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Updated Date</mat-label>
+            <input required matInput type="text" name="updatedDate" [(ngModel)]="data.feeDetails.updatedDate" readonly>
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button (click)="onCloseClick()">Close</button>
+        <button mat-raised-button color="primary" (click)="onUpdateClick()" type="submit">Update</button>
+    </mat-dialog-actions>
+</form>

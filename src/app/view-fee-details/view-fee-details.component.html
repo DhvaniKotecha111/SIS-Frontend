@@ -1,0 +1,18 @@
+<div class="container">
+  <h2 mat-dialog-title style="text-align: center; font-weight: bold;">Fee Details</h2>
+  <mat-dialog-content>
+    <div class="card">
+      <div class="card-body">
+        <p><strong>Student Enrollment No:</strong> {{ data.studentEnrollmentNo }}</p>
+        <p><strong>Fee Amount:</strong> {{ data.feeAmount }}</p>
+        <p><strong>Due Date:</strong> {{ data.dueDate }}</p>
+        <p><strong>Updated By:</strong> {{ data.updatedBy }}</p>
+        <p><strong>Updated Date:</strong> {{ data.updatedDate }}</p>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onCloseClick()">Close</button>
+    <button *ngIf="role == 'ROLE_ADMIN'" mat-raised-button (click)="onUpdateClick()" color="primary">Update</button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button aria-label="Menu icon" (click)="toggleSidebar()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>
+        <a mat-icon-button routerLink="/">Student Information System</a>
+    </span>
+    <span class="example-spacer"></span>
+    <span>
+        <a mat-icon-button routerLink="/student-dashboard" *ngIf="loggedIn && role === 'ROLE_USER'"
+            style="margin-right: 100px;">Dashboard</a>
+        <a mat-icon-button routerLink="/admin-dashboard" *ngIf="loggedIn && role === 'ROLE_ADMIN'"
+            style="margin-right: 100px;">Dashboard</a>
+    </span>
+    <a *ngIf="loggedIn && role === 'ROLE_USER' && profileStatus == false" mat-icon-button routerLink="student-profile"
+        style="margin-right: 130px;">Create Profile</a>
+    <a *ngIf="loggedIn && role === 'ROLE_ADMIN' && profileStatus == false" mat-icon-button routerLink="admin-profile"
+        style="margin-right: 130px;">Create Profile</a>
+    <a *ngIf="loggedIn && role === 'ROLE_USER' && profileStatus" mat-icon-button routerLink="update-student-profile"
+        style="margin-right: 130px;">Update Profile</a>
+    <a *ngIf="loggedIn && role === 'ROLE_ADMIN' && profileStatus" mat-icon-button routerLink="update-admin-profile"
+        style="margin-right: 130px;">Update Profile</a>
+    <a *ngIf="loggedIn" (click)="logoutUser()" mat-icon-button style="margin-right: 50px;">Logout</a>
+</mat-toolbar>
+<!-- <app-admin-sidebar *ngIf="loggedIn && role === 'ROLE_ADMIN'" #adminSideBar></app-admin-sidebar> -->

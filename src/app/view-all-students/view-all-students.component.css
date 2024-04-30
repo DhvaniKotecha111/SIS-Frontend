@@ -1,0 +1,13 @@
+button{
+    margin: 2px;
+}
+
+th{
+    color: rgb(54, 96, 173)!important;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.text-center{
+    text-align: center;
+}

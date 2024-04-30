@@ -1,0 +1,64 @@
+<div class="bootstrap-wrapper text-center mt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form #studentForm="ngForm" (ngSubmit)="updateStudentDetails()">
+                    <mat-form-field class="full-width">
+                        <mat-label>Enrollent No</mat-label>
+                        <input required name="enrollmentNo" [(ngModel)]="studentDetails.enrollmentNo" type="text" readonly matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>User Name</mat-label>
+                        <input required name="name" [(ngModel)]="studentDetails.name" type="text" readonly matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Address</mat-label>
+                        <input required name="address" [(ngModel)]="studentDetails.address" type="text" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Branch</mat-label>
+                        <input required name="branch" [(ngModel)]="studentDetails.branch" type="text" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>City</mat-label>
+                        <input required name="city" [(ngModel)]="studentDetails.city" type="text" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Contact</mat-label>
+                        <input required name="contact" [(ngModel)]="studentDetails.contact" type="text" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Date Of Birth</mat-label>
+                        <input required name="dob" [(ngModel)]="studentDetails.dob" type="text" matInput>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Gender</mat-label>
+                        <mat-select name="gender" [(ngModel)]="studentDetails.gender">
+                            <mat-option value="Male">Male</mat-option>
+                            <mat-option value="Female">Female</mat-option>
+                            <mat-option value="Other">Other</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Pincode</mat-label>
+                        <input required name="pinCode" [(ngModel)]="studentDetails.pinCode" type="text" matInput>
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary" [disabled]="studentForm.invalid">Update Profile</button>
+                        <button type="reset" mat-stroked-button color="primary"
+                            style="margin-left: 10px;">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

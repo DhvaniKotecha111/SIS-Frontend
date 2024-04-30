@@ -1,0 +1,47 @@
+<div class="bootstrap-wrapper text-center mt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 style="border: 1px dashed black;">Login Here</h1>
+                <form novalidate #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Username</mat-label>
+                        <input required #uname="ngModel" name="username" type="text" matInput ngModel>
+                    </mat-form-field>
+                    <div class="alert alert-danger" *ngIf="uname.touched && uname.invalid">
+                        <div *ngIf="uname.errors && uname.errors['required']">
+                            <strong>User Name is Required</strong>
+                        </div>
+                    </div>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input required #pwd="ngModel" name="password" type="password" matInput ngModel>
+                    </mat-form-field>
+                    <div class="alert alert-danger" *ngIf="pwd.touched && pwd.invalid">
+                        <div *ngIf="pwd.errors && pwd.errors['required']">
+                            <strong>Password is Required</strong>
+                        </div>
+                    </div>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Role</mat-label>
+                        <input required #role="ngModel" name="role" type="text" matInput ngModel>
+                    </mat-form-field>
+                    <div class="alert alert-danger" *ngIf="role.touched && role.invalid">
+                        <div *ngIf="role.errors && role.errors['required']">
+                            <strong>Role is Required</strong>
+                        </div>
+                    </div>
+
+                    <button type="submit" mat-raised-button color="primary" [disabled]="formData.invalid">Login</button>
+                    <button type="reset" mat-stroked-button color="primary" style="margin-left: 10px;">Reset</button>
+                </form>
+                <br>
+                <!-- Forgot Password Link -->
+                <p>Forgot Password ? <a routerLink="/forgot-password">Click Here</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="bootstrap-wrapper text-center mt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 style="border: 1px dashed black;">Verify Otp</h1>
+                <form [formGroup]="data" (ngSubmit)="onSubmit()"> 
+                    <mat-form-field class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input formControlName="email" type="text" matInput readonly>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>Date Of Birth</mat-label>
+                        <input formControlName="dob" type="text" matInput readonly>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width">
+                        <mat-label>OTP</mat-label>
+                        <input required formControlName="otp" type="text" matInput>
+                        <mat-error *ngIf="formCtrl.otp.invalid && formCtrl.otp.touched">
+                            <span *ngIf="formCtrl.otp.errors.required">OTP is required</span>
+                            <span *ngIf="formCtrl.otp.errors.pattern">OTP must be exactly 6 digits long</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <button type="submit" mat-raised-button color="primary" [disabled]="data.invalid">Verify</button>
+                    <button type="reset" mat-stroked-button color="primary" style="margin-left: 10px;">Reset</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
